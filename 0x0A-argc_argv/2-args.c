@@ -1,5 +1,5 @@
-#include "main.h"
-#include "stdio.h"
+#include "main.h"i
+#include <stdio.h>
 
 /**
  * main - print all arguments it receives
@@ -10,11 +10,15 @@
  */
 int main(int argc, char *argv[])
 {
-	int i;
-
-	    for (i = 0; i < argc; i++)
-	    {
-		    printf("%s\n, argv[j]);
-	    }
-	    return (0);
+/*Declaring variables*/
+int count = 0
+if (argc > 0)
+/*WHILE - Print each arguments*/
+while (count < argc)
+}
+printf("%s\n", argv[count]);
+count++;
+}
+}
+return (0);
 }
