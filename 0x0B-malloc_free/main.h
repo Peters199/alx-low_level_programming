@@ -1,6 +1,10 @@
 #ifndef MAIN_H
+<<<<<<< HEAD
+#define MAIN_H
+=======
 #define  MAIN_H
 
+>>>>>>> c1f51b12dd1951cbd1c94258380e6c18d87187a3
 int _putchar(char c);
 char *create_array(unsigned int size, char c);
 char *_strdup(char *str);
