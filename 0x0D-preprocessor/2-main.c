@@ -1,8 +1,9 @@
 #include <stdio.h>
+
 /**
  * main - prints the namme of the file
  *
- * Return: 0 on Success Always
+ * Return: Always 0 On (Success)
  */
 int main(void)
 {
