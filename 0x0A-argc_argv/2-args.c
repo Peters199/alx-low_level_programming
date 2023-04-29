@@ -1,4 +1,4 @@
-#include "main.h"i
+#include "main.h"
 #include <stdio.h>
 
 /**
@@ -11,14 +11,13 @@
 int main(int argc, char *argv[])
 {
 /*Declaring variables*/
-int count = 0
+int count = 0;
 if (argc > 0)
 /*WHILE - Print each arguments*/
 while (count < argc)
 }
 printf("%s\n", argv[count]);
 count++;
-}
 }
 return (0);
 }
