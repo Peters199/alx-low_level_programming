@@ -1,25 +1,26 @@
 #include "lists.h"
 
 /**
- * reverse_listint - reversesa linked list
- * @head: pointer to the first node in the list
+ * reverse_listint - reverses an int list
+ * @head: address of the pointer to first node
  *
- * Return: pointer to the first node in the list
+ * Return: address pointer to the first node in the list
  */
 listint_t *reverse_listint(listint_t **head)
 {
-	listint_t *prev = NULL;
-	listint_t *next = NULL;
+	listint_t *node = NULL, *next =NULL;
 
-	while (*head)
+	if (!head || !*head)
+		return (NULL);
+	
+	node = *head;
+	*head = NULL;
+	while (node)
 	{
-		next = (*head)->next;
-		(*head)->next = prev;
-		prev = *head;
-		*head = next;
+		next = node->next;
+		node->next = *head;
+		*head = node;
+		node = next;
 	}
-
-	*head = prev;
-
 	return (*head);
 }
