@@ -1,34 +1,18 @@
 #include "main.h"
 
 /**
- * _strlen - returns the length of the string
- * @s: the string its length to check
+ * append_text_to_file - appends text at the end of a file
+ * @filename: filename
+ * @text_content: added content
  *
- * Return: integer length of string
- */
-int _strlen(char *s)
-{
-	int i = 0;
-
-	if (!s)
-		return (0);
-
-	while (*s++)
-		i++;
-	return (i);
-}
-
-/**
- * append_text_to_file - appends text to a file
- * @filename: name of file to creaate
- * @text_content: text to write
- *
- * Return: 1 on success 0 if it fails
+ * Return: 1 if the file exist, -1 the fails does not exist
+ * or if it fails.
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
 	int fd;
-	ssize_t bytes = 0, len = _strlen(text_content);
+	int nletters;
+	int rwr;
 
 	if (!filename)
 		return (-1);
@@ -38,8 +22,18 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (fd == -1)
 		return (-1);
 
-	if (len)
-		bytes = write(fd, text_content, len);
+	if (text_content)
+	{
+		for (nletters = 0; text_content[nletters]; nletters++)
+			;
+
+		rwr = write(fd, text_content, nletters);
+
+		if (rwr == -1)
+			return (-1);
+	}
+	
 	close(fd);
-	return (bytes == len ? 1 : -1);
+
+	return (1);
 }
